@@ -1,6 +1,8 @@
-const router = require('express').Router();
+const express = require('express');
 
 const Friends = require('./friends-model.js');
+
+const router = express.Router();
 
 router.get('/friends', (req, res) => {
     Friends.getAll()
@@ -45,3 +47,6 @@ router.get('/friends', (req, res) => {
       res.status(500).json({ message: 'Failed to delete friend' });
     });
   });
+
+
+  module.exports = router;
